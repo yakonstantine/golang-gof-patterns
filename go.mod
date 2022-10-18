@@ -1,3 +1,3 @@
-module gof-patterns
+module gof
 
 go 1.19
