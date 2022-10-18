@@ -2,8 +2,10 @@ package prototype
 
 type TreeNode interface {
 	Value() int
-	Print() string
-	Clone() TreeNode
+	Left() TreeNode
+	Right() TreeNode
 	SetLeft(node TreeNode)
 	SetRight(node TreeNode)
+	Print() string
+	Clone() TreeNode
 }
