@@ -6,14 +6,12 @@ import (
 
 type BinaryTree struct {
 	value int
-	left  *BinaryTree
-	right *BinaryTree
+	left  TreeNode
+	right TreeNode
 }
 
 func NewBinaryTree(val int) *BinaryTree {
-	return &BinaryTree{
-		value: val,
-	}
+	return &BinaryTree{value: val}
 }
 
 func (bt *BinaryTree) Value() int {
@@ -21,31 +19,19 @@ func (bt *BinaryTree) Value() int {
 }
 
 func (bt *BinaryTree) Left() TreeNode {
-	if bt == nil || bt.left == nil {
-		return nil
-	}
 	return bt.left
 }
 
 func (bt *BinaryTree) SetLeft(node TreeNode) {
-	if node == nil {
-		return
-	}
-	bt.left = node.(*BinaryTree)
+	bt.left = node
 }
 
 func (bt *BinaryTree) Right() TreeNode {
-	if bt == nil || bt.right == nil {
-		return nil
-	}
 	return bt.right
 }
 
 func (bt *BinaryTree) SetRight(node TreeNode) {
-	if node == nil {
-		return
-	}
-	bt.right = node.(*BinaryTree)
+	bt.right = node
 }
 
 func (bt *BinaryTree) Print() string {
